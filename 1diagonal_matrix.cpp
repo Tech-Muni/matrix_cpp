@@ -82,19 +82,23 @@ void Diagonal::set(int i, int j, int x)
 int Diagonal::get(int i, int j)
 {
     if (i == j)
-        A[i - 1];
+    {
+        return A[i - 1];
+    }
     else
+    {
         return 0;
+    }
 }
 void Diagonal::display()
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 1; j <= n; j++)
         {
             if (i == j)
             {
-                cout << A[i - 1];
+                cout << A[i - 1] << " ";
             }
             else
                 cout << "0 ";
@@ -111,5 +115,11 @@ int main(int argc, char const *argv[])
     Set(&m, 3, 3, 9);
     Set(&m, 4, 4, 12);
     Display(m);
+    Diagonal d(4);
+    d.set(1, 1, 5);
+    d.set(2, 2, 8);
+    d.set(3, 3, 9);
+    d.set(4, 4, 12);
+    d.display();
     return 0;
 }
