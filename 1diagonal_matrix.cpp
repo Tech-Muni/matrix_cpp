@@ -54,6 +54,11 @@ private:
     int *A;
 
 public:
+    Diagonal()
+    {
+        n = 2;
+        A = new int[2];
+    }
     Diagonal(int n)
     {
         this->n = n;
